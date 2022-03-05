@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "phil idle"
+		},
+		{
+			"offsets": [
+				-7,
+				-327
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "phil Down"
+		},
+		{
+			"offsets": [
+				-47,
+				-135
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "phil Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-74,
+				-201
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "phil Left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-14,
+				-324
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "phil miss DOWN"
+		},
+		{
+			"offsets": [
+				-36,
+				-151
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "phil miss UP"
+		},
+		{
+			"offsets": [
+				43,
+				-198
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "phil miss RIGHT"
+		},
+		{
+			"offsets": [
+				-56,
+				-186
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "phil miss LEFT"
+		},
+		{
+			"offsets": [
+				65,
+				-207
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "phil Right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/phil-playable",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "phil",
+	"flip_x": false,
+	"healthbar_colors": [
+		28,
+		117,
+		25
+	],
+	"camera_position": [
+		-20,
+		380
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

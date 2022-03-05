@@ -106,6 +106,27 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
+				case 'little note':
+					ignoreNote = mustPress;
+					reloadNote('LITTLE');
+					noteSplashTexture = 'HURTnoteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = -100;
+					colorSwap.brightness = 0;
+					noAnimation = true;
+				case 'hell note':
+					ignoreNote = mustPress;
+					reloadNote('HELL');
+					noteSplashTexture = 'HELLnoteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					if(isSustainNote) {
+						missHealth = 0.1;
+					} else {
+						missHealth = 0.45;
+					}
+					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
 				case 'GF Sing':

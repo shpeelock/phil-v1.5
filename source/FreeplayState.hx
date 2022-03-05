@@ -16,6 +16,7 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import lime.utils.Assets;
 import flixel.system.FlxSound;
+import flixel.util.FlxTimer;
 import openfl.utils.Assets as OpenFlAssets;
 import WeekData;
 #if MODS_ALLOWED
@@ -400,11 +401,22 @@ class FreeplayState extends MusicBeatState
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = CoolUtil.difficulties.length-1;
-		if (curDifficulty >= CoolUtil.difficulties.length)
+			curDifficulty = -1;
+		if (curDifficulty >= -1)
 			curDifficulty = 0;
 
 		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+
+		if (songs[curSelected].songName == 'slack'){
+			curDifficulty += change;
+			if (curDifficulty < 0)
+				curDifficulty = CoolUtil.difficulties.length-1;
+			if (curDifficulty >= CoolUtil.difficulties.length)
+				curDifficulty = 0;
+			lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+		}
+
+		trace(curDifficulty);
 
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);

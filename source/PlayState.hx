@@ -266,6 +266,13 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 
+	var bossKnife:FlxSprite = new FlxSprite();
+	var lilmanSpike:FlxSprite = new FlxSprite();
+	var boss:FlxSprite = new FlxSprite();
+	var ohHellnah:FlxSprite = new FlxSprite();
+	var philbg:FlxSprite;
+	var	philScared:BGSprite;
+
 	override public function create()
 	{
 		Paths.clearStoredMemory();
@@ -421,6 +428,129 @@ class PlayState extends MusicBeatState
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
+
+				case 'philBg':
+					var white:FlxSprite = new FlxSprite().makeGraphic(FlxG.width * 5000, 1000, FlxColor.WHITE);
+					add(white);
+					philbg = new FlxSprite(-136, -179.1).loadGraphic(Paths.image('stagePhil/philbg', 'phil'));
+					philbg.antialiasing = true;
+					add(philbg);
+					philbg.scale.set(0.7, 0.7);
+	
+				case 'blosimsBg':
+					var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('stagePhil/blosimsBg', 'phil'));
+					bg.antialiasing = true;
+					add(bg);
+	
+					ohHellnah.loadGraphic(Paths.image('blosim', 'phil'));
+					ohHellnah.alpha = 0;
+					ohHellnah.cameras = [camHUD];
+					ohHellnah.antialiasing = true;
+					ohHellnah.screenCenter();
+					
+				case 'workerBg':
+	
+					var bg:FlxSprite = new FlxSprite(-98.95, -10.15).loadGraphic(Paths.image('stagePhil/worker/workerBg', 'phil'));
+					bg.antialiasing = true;
+					add(bg);
+	
+					var ground:FlxSprite = new FlxSprite(-98.95, 628.2).loadGraphic(Paths.image('stagePhil/worker/workerGround', 'phil'));
+					ground.antialiasing = true;
+					add(ground);
+	
+					var lamp:FlxSprite = new FlxSprite(92.7, 112.1).loadGraphic(Paths.image('stagePhil/worker/workerLamp', 'phil'));
+					lamp.antialiasing = true;
+					add(lamp);
+	
+					var moon:FlxSprite = new FlxSprite(1452.15, 68.85).loadGraphic(Paths.image('stagePhil/worker/workerMoon', 'phil'));
+					moon.antialiasing = true;
+					add(moon);
+	
+					var stars:FlxSprite = new FlxSprite(674.7, 2.9).loadGraphic(Paths.image('stagePhil/worker/workerStars', 'phil'));
+					stars.antialiasing = true;
+					add(stars);
+	
+					philScared = new BGSprite('phil-scared', 149.75, 317, 1, 1, ['phil idle in fear']);
+					add(philScared);
+	
+					philScared.dance(true);
+	
+				case 'lilmanBg':
+	
+					var bg:FlxSprite = new FlxSprite(-98.95, -10.15).loadGraphic(Paths.image('stagePhil/lilman/lilmanBg', 'phil'));
+					bg.antialiasing = true;
+					add(bg);
+	
+					var road:FlxSprite = new FlxSprite(-98.95, 628.2).loadGraphic(Paths.image('stagePhil/lilman/lilmanRoad', 'phil'));
+					road.antialiasing = true;
+					add(road);
+	
+					var grass:FlxSprite = new FlxSprite(-28.4, 858.55).loadGraphic(Paths.image('stagePhil/lilman/lilmanGrass', 'phil'));
+					grass.antialiasing = true;
+					add(grass);
+	
+					lilmanSpike.antialiasing = true;
+					lilmanSpike.cameras = [camGame];
+					lilmanSpike.frames = Paths.getSparrowAtlas('stagePhil/lilman/lilmanSpike', 'phil');
+					lilmanSpike.animation.addByPrefix('attack', 'spike rise', 24, false);
+	
+					lilmanSpike.x += 812.4;
+					lilmanSpike.y += 420.6;
+	
+					lilmanSpike.alpha = 0;
+	
+					var lamp:FlxSprite = new FlxSprite(92.7, 112.1).loadGraphic(Paths.image('stagePhil/lilman/lilmanLamp', 'phil'));
+					lamp.antialiasing = true;
+					add(lamp);
+	
+					var ripbozo:FlxSprite = new FlxSprite(271.5, 500.2).loadGraphic(Paths.image('stagePhil/lilman/lilmanRipbozo', 'phil'));
+					ripbozo.antialiasing = true;
+					add(ripbozo);
+	
+				case 'slackBg' | 'slackbgfnafWHATREALBLOXIAM':
+	
+					//NOTE TO SELF: deez n
+	
+					bossKnife.antialiasing = true;
+					bossKnife.cameras = [camGame];
+					bossKnife.screenCenter();
+					bossKnife.scale.set(1,1);
+					bossKnife.y += 40;
+					//why you built like that
+					bossKnife.alpha = 0;
+	
+					bossKnife.frames = Paths.getSparrowAtlas('stagePhil/slack/bossKnife', 'phil');
+					bossKnife.animation.addByPrefix('attack', 'boss knife', 24, false);
+					
+					var hell:FlxSprite = new FlxSprite().loadGraphic(Paths.image('stagePhil/slack/slackBg', 'phil'));
+					hell.antialiasing = true;
+					hell.screenCenter();
+					hell.scale.set(1.5,1.5);
+					hell.scrollFactor.set(1.35, 1.35);
+	
+					add(hell);
+	
+					boss.antialiasing = true;
+					boss.cameras = [camGame];
+					boss.screenCenter();
+					boss.scale.set(2,2);
+	
+					boss.frames = Paths.getSparrowAtlas('stagePhil/slack/Boss', 'phil');
+					boss.animation.addByPrefix('idle', 'Idle', 24, true);
+					boss.animation.addByPrefix('attack', 'attack', 24, false);
+	
+					boss.x -= 1600;
+					boss.y -= 550;
+	
+					boss.animation.play('idle');
+	
+					var hellplatforms:FlxSprite = new FlxSprite(400, 1090).loadGraphic(Paths.image('stagePhil/slack/hellPlatforms', 'phil'));
+					hellplatforms.antialiasing = true;
+					hellplatforms.scale.set(1.95,1.95);
+	
+					add(hellplatforms);
+	
+					add(boss);
 
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {
@@ -814,10 +944,19 @@ class PlayState extends MusicBeatState
 			case 'limo':
 				resetFastCar();
 				insert(members.indexOf(gfGroup) - 1, fastCar);
-			
 			case 'schoolEvil':
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				insert(members.indexOf(dadGroup) - 1, evilTrail);
+			case 'philBg':
+				gf.visible = false;
+			case 'slackBg' | 'slackbgfnafWHATREALBLOXIAM':
+				gf.visible = false;
+			case 'workerBg':
+				gf.visible = false;
+			case 'lilmanBg':
+				gf.visible = false;
+			case 'blosimsBg':
+				gf.visible = false;
 		}
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
@@ -2438,7 +2577,6 @@ class PlayState extends MusicBeatState
 				{
 					opponentNoteHit(daNote);
 				}
-
 				if(daNote.mustPress && cpuControlled) {
 					if(daNote.isSustainNote) {
 						if(daNote.canBeHit) {
@@ -3848,6 +3986,11 @@ class PlayState extends MusicBeatState
 						boyfriend.specialAnim = true;
 						boyfriend.heyTimer = 0.6;
 					}
+				if(note.noteType == 'little note')
+					{
+						noteMiss(note);
+						littlenoteGhosting();
+					}
 	
 					if(gf.animOffsets.exists('cheer')) {
 						gf.playAnim('cheer', true);
@@ -3886,6 +4029,39 @@ class PlayState extends MusicBeatState
 				notes.remove(note, true);
 				note.destroy();
 			}
+		}
+	}
+
+	private var nooooArrow:Int = 0;
+
+	function littlenoteGhosting():Void {
+		if(nooooArrow < 10){
+			nooooArrow++;
+			camHUD.alpha -= 0.1;
+		} else {
+			var popupthing:FlxSprite = new FlxSprite(878.35, 345.95);
+			var popupthingLoop:FlxSprite = new FlxSprite(popupthing.x, popupthing.y);
+			popupthing.scale.set(1.4,1.4);
+			popupthingLoop.scale.set(1.4,1.4);
+			popupthing.frames = Paths.getSparrowAtlas('littleManpopup', 'phil');
+			popupthingLoop.frames = Paths.getSparrowAtlas('littleManpopuploop', 'phil');
+			popupthing.animation.addByPrefix('open', 'popup open', 24, false);
+			popupthingLoop.animation.addByPrefix('idle', 'popup', 24, true);
+	
+			popupthing.antialiasing = true;
+			popupthing.cameras = [camGame];
+
+			popupthingLoop.antialiasing = true;
+			popupthingLoop.cameras = [camGame];
+
+			add(popupthing);
+			FlxG.sound.play(Paths.sound('popup', 'phil'));
+			popupthing.animation.play('open', true);
+			new FlxTimer().start(1, function(tmr:FlxTimer){
+				remove(popupthing);
+				add(popupthingLoop);
+				popupthingLoop.animation.play('idle', true);
+			});
 		}
 	}
 
