@@ -1,5 +1,6 @@
 package;
 
+import Controls.Control;
 import flixel.graphics.FlxGraphic;
 #if desktop
 import Discord.DiscordClient;
@@ -266,12 +267,17 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 
+	//phil stuff
 	var bossKnife:FlxSprite = new FlxSprite();
 	var lilmanSpike:FlxSprite = new FlxSprite();
 	var boss:FlxSprite = new FlxSprite();
 	var ohHellnah:FlxSprite = new FlxSprite();
 	var philbg:FlxSprite;
 	var	philScared:BGSprite;
+	var deathByKnife:Bool;
+	var bfDodging:Bool = false;
+	var bfCanDodge:Bool = false;
+
 
 	override public function create()
 	{
@@ -1301,6 +1307,88 @@ class PlayState extends MusicBeatState
 		CustomFadeTransition.nextCamera = camOther;
 	}
 
+	function spacebarInstructions():Void {
+
+		if(curStage == 'slackBg' || curStage == 'slackbgfnafWHATREALBLOXIAM'){
+			add(bossKnife);
+		}
+
+
+		var	spacebarInstructions = new FlxText(0, 0, 500); // x, y, width
+		spacebarInstructions.text = Control.DODGE + " TO DODGE!!";
+		spacebarInstructions.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacebarInstructions.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		spacebarInstructions.alpha = 0;
+		spacebarInstructions.cameras = [camHUD];
+		spacebarInstructions.screenCenter();
+			add(spacebarInstructions);
+			FlxTween.tween(spacebarInstructions, {alpha: 1}, Conductor.stepCrochet * 2 / 1000, {ease: FlxEase.quadOut});
+				new FlxTimer().start(1.5, function(tmr:FlxTimer){
+					FlxTween.tween(spacebarInstructions, {alpha: 0}, Conductor.stepCrochet * 2 / 1000, {ease: FlxEase.quadOut});
+		});
+	}
+
+	function spacebarWarning():Void {
+		var	spacebarPrepare = new FlxText(0, 0, 500); // x, y, width
+		spacebarPrepare.text = "DODGE!!";
+		spacebarPrepare.setFormat(Paths.font("vcr.ttf"), 80, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacebarPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		spacebarPrepare.alpha = 1;
+		spacebarPrepare.cameras = [camHUD];
+		spacebarPrepare.screenCenter();
+		add(spacebarPrepare);
+		FlxG.camera.shake(0.01, 0.1);
+		new FlxTimer().start(0.1, function(tmr:FlxTimer)
+			{
+				FlxTween.tween(spacebarPrepare, {alpha: 0}, Conductor.stepCrochet * 10 / 1000, {ease: FlxEase.quadOut});
+		});
+	}
+
+	function AttackWarning():Void {
+
+		var warningSound:FlxSound = new FlxSound().loadEmbedded(Paths.sound('bossAttackAlert', 'phil'));
+		
+		warningSound.volume = 20;
+
+		var	attackPrepare = new FlxText(0, 0, 500); // x, y, width
+		attackPrepare.text = "!";
+		attackPrepare.setFormat(Paths.font("vcr.ttf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		attackPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		attackPrepare.alpha = 1;
+		attackPrepare.cameras = [camHUD];
+		attackPrepare.screenCenter();
+
+		add(attackPrepare);
+		warningSound.play();
+
+		new FlxTimer().start(0.1, function(tmr:FlxTimer)
+			{
+				FlxTween.tween(attackPrepare, {alpha: 0}, Conductor.stepCrochet * 10 / 1000, {ease: FlxEase.quadOut});
+		});
+	}
+	function AttackWarningx2():Void {
+
+		var warningSound:FlxSound = new FlxSound().loadEmbedded(Paths.sound('bossAttackAlert', 'phil'));
+		
+		warningSound.volume = 20;
+
+		var	attackPrepare = new FlxText(0, 0, 500); // x, y, width
+		attackPrepare.text = "! x2";
+		attackPrepare.setFormat(Paths.font("vcr.ttf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		attackPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		attackPrepare.alpha = 1;
+		attackPrepare.cameras = [camHUD];
+		attackPrepare.screenCenter();
+
+		add(attackPrepare);
+		warningSound.play();
+
+		new FlxTimer().start(0.1, function(tmr:FlxTimer)
+			{
+				FlxTween.tween(attackPrepare, {alpha: 0}, Conductor.stepCrochet * 10 / 1000, {ease: FlxEase.quadOut});
+		});
+	}
+
 	function set_songSpeed(value:Float):Float
 	{
 		if(generatedMusic)
@@ -1681,6 +1769,22 @@ class PlayState extends MusicBeatState
 					santa.dance(true);
 				}
 
+				if (curStage == 'slackBg' || curStage == 'workerBg' || curStage == 'slackbgfnafWHATREALBLOXIAM'){
+					spacebarInstructions();
+				}
+
+				if(curSong.toLowerCase() == 'blosims'){
+					add(ohHellnah);
+				}
+
+				if(curStage == 'lilmanBg'){
+					var grass2:FlxSprite = new FlxSprite(-28.4, 858.55).loadGraphic(Paths.image('stagePhil/lilman/lilmanGrass', 'phil'));
+					grass2.antialiasing = true;
+					add(grass2);
+
+					add(lilmanSpike);
+				}
+
 				switch (swagCounter)
 				{
 					case 0:
@@ -1982,7 +2086,7 @@ class PlayState extends MusicBeatState
 		}
 		checkEventNote();
 		generatedMusic = true;
-	}
+}
 
 	function eventPushed(event:EventNote) {
 		switch(event.event) {
@@ -2924,6 +3028,15 @@ class PlayState extends MusicBeatState
 					curLightEvent = 0;
 				}
 
+			case 'Boss Attack':
+				bossAttack();
+
+			case 'Boss Attack Alert':
+				AttackWarning();
+
+			case 'Boss Attack Alert x2':
+				AttackWarningx2();
+
 			case 'Kill Henchmen':
 				killHenchmen();
 
@@ -3107,6 +3220,115 @@ class PlayState extends MusicBeatState
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}
+
+	var drainTime:FlxTimer;
+
+	function healthdrain():Void
+		{
+
+			drainTime = new FlxTimer().start(0.1, function(tmr:FlxTimer)
+			{
+				health -= 0.005;
+			}, 100);
+			
+		}
+
+	function bleedingGraphic(){
+		var bleedShit:FlxSprite = new FlxSprite().loadGraphic(Paths.image('bleed', 'phil'));
+		bleedShit.alpha = 1;
+		bleedShit.cameras = [camHUD];
+		bleedShit.screenCenter();
+		add(bleedShit);
+
+		new FlxTimer().start(0.1, function(tmr:FlxTimer){
+			FlxTween.tween(bleedShit, {alpha: 0, }, 10, {ease: FlxEase.quadOut});
+		});
+	}
+
+	function bossAttackAnimation(){
+		if (curStage == 'slackBg' || curStage == 'slackbgfnafWHATREALBLOXIAM'){
+			boss.animation.play('attack', true);
+			new FlxTimer().start(0.3, function(tmr:FlxTimer){
+				boss.animation.play('idle', true);
+			});
+		}
+	}
+
+	function bossAttack():Void
+	{
+
+		//WARNING: this code is very messy
+
+		spacebarWarning();
+
+		var ded:FlxSound = new FlxSound().loadEmbedded(Paths.sound('BF_KnifeDeath', 'phil'));
+		ded.volume = 1;
+
+		var bossfire:FlxSound = new FlxSound().loadEmbedded(Paths.sound('bossFire', 'phil'));
+		bossfire.volume = 0.5;
+
+		var lilmanAttack:FlxSound = new FlxSound().loadEmbedded(Paths.sound('littlemanAttack', 'phil'));
+		lilmanAttack.volume = 0.5;
+
+		switch(curStage){
+
+			case 'slackBg' | 'slackbgfnafWHATREALBLOXIAM':
+				bossKnife.animation.play('attack', true);
+				bossAttackAnimation();
+				bossfire.play();
+				bossKnife.alpha = 1;
+				if(cpuControlled){
+					dad.playAnim('dodge', true);
+					boyfriend.playAnim('alt-dodge', true);
+				}
+
+			case 'workerBg':
+				bossfire.play();
+				dad.playAnim('attack', true);
+				if(cpuControlled){
+					boyfriend.playAnim('alt-dodge', true);
+				}
+
+			case 'lilmanBg':
+				lilmanAttack.play();
+				lilmanSpike.animation.play('attack', true);
+				lilmanSpike.alpha = 1;
+				if(cpuControlled){
+					boyfriend.playAnim('dodge', true);
+				}
+
+		}
+			new FlxTimer().start(0.1, function(tmr:FlxTimer)
+			{
+				//botplay check
+				if(cpuControlled){
+					deathByKnife = false;
+					trace('using botplay');
+				}
+				else
+				{
+					if(!bfDodging)
+					{
+						deathByKnife = true;
+						healthdrain();
+						ded.play();
+						health -= 0.2; //no insta kill everyone's sanity
+						boyfriend.playAnim('hurt', true);
+						if(curSong == 'slack'){
+							dad.playAnim('dead', true);
+						}
+						trace('ouch');
+					}
+					else if(bfDodging = true){
+						trace('awesome');
+						if(curSong == 'slack'){
+							dad.playAnim('dodge', true);
+						}
+						health += 0.2;
+					}
+				}
+			});
+		}	
 
 	function moveCameraSection(?id:Int = 0):Void {
 		if(SONG.notes[id] == null) return;
@@ -3719,7 +3941,37 @@ class PlayState extends MusicBeatState
 		var right = controls.NOTE_RIGHT;
 		var down = controls.NOTE_DOWN;
 		var left = controls.NOTE_LEFT;
+		var dodge = controls.DODGE;
 		var controlHoldArray:Array<Bool> = [left, down, up, right];
+
+		if(curStage == 'slackBg' || curStage == 'workerBg' || curStage == 'lilmanBg' || curStage == 'slackbgfnafWHATREALBLOXIAM'){
+
+			if(dodge){
+				trace('i am alive');
+				trace('DODGE START!');
+				bfDodging = true;
+				bfCanDodge = false;
+
+				if(curStage == 'slackBg' || curStage == 'workerBg'){
+					boyfriend.playAnim('alt-dodge', true);
+				}
+				else
+				{
+					boyfriend.playAnim('dodge', true);
+				}
+
+				new FlxTimer().start(0.330, function(tmr:FlxTimer)
+				{
+					bfDodging = false;
+					trace('DODGE END!');
+					new FlxTimer().start(0.05, function(tmr:FlxTimer)
+					{
+						bfCanDodge = true;
+						trace('DODGE RECHARGED!');
+					});
+				});
+			}
+		}
 		
 		// TO DO: Find a better way to handle controller inputs, this should work for now
 		if(ClientPrefs.controllerMode)

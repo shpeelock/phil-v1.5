@@ -1,81 +1,81 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "phil idle"
+			"fps": 24,
+			"name": "phil idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "phil down"
+			"fps": 24,
+			"name": "phil down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "phil up"
+			"fps": 24,
+			"name": "phil up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "phil right"
+			"fps": 24,
+			"name": "phil right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "pihl left"
+			"fps": 24,
+			"name": "pihl left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "dead",
-			"loop": false,
-			"name": "dead"
+			"fps": 24,
+			"name": "dead",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "dodge",
-			"loop": false,
-			"name": "dodge"
+			"fps": 24,
+			"name": "dodge",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -84,12 +84,12 @@
 		-60,
 		130
 	],
-	"healthicon": "face",
+	"healthicon": "boss",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		85,
+		74,
+		74
 	],
 	"camera_position": [
 		10,
