@@ -4238,12 +4238,6 @@ class PlayState extends MusicBeatState
 						boyfriend.specialAnim = true;
 						boyfriend.heyTimer = 0.6;
 					}
-				if(note.noteType == 'little note')
-					{
-						noteMiss(note);
-						littlenoteGhosting();
-					}
-	
 					if(gf.animOffsets.exists('cheer')) {
 						gf.playAnim('cheer', true);
 						gf.specialAnim = true;
@@ -4251,6 +4245,11 @@ class PlayState extends MusicBeatState
 					}
 				}
 			}
+			if(note.noteType == 'little note')
+				{
+					noteMiss(note);
+					littlenoteGhosting();
+				}
 
 			if(cpuControlled) {
 				var time:Float = 0.15;

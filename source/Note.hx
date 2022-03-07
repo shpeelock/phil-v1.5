@@ -113,7 +113,6 @@ class Note extends FlxSprite
 					colorSwap.hue = 0;
 					colorSwap.saturation = -100;
 					colorSwap.brightness = 0;
-					noAnimation = true;
 				case 'hell note':
 					ignoreNote = mustPress;
 					reloadNote('HELL');
