@@ -416,11 +416,12 @@ class FreeplayState extends MusicBeatState
 
 		if (songs[curSelected].songName == 'slack'){
 			curDifficulty += change;
-			if (curDifficulty < 0)
-				curDifficulty = CoolUtil.difficulties.length-1;
-			if (curDifficulty >= CoolUtil.difficulties.length)
-				curDifficulty = 0;
-			lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+		if (curDifficulty < 0)
+			curDifficulty = CoolUtil.difficulties.length-1;
+		if (curDifficulty >= CoolUtil.difficulties.length)
+			curDifficulty = 0;
+
+		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
 		}
 
 		trace(curDifficulty);
