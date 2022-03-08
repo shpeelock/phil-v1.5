@@ -70,6 +70,7 @@ class ClientPrefs {
 		'ui_up'			=> [W, UP],
 		'ui_right'		=> [D, RIGHT],
 		
+		'dodge'			=> [SPACE, NONE],
 		'accept'		=> [SPACE, ENTER],
 		'back'			=> [BACKSPACE, ESCAPE],
 		'pause'			=> [ENTER, ESCAPE],
