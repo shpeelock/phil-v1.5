@@ -115,6 +115,26 @@ class Note extends FlxSprite
 					noAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
+				case 'little note':
+					ignoreNote = mustPress;
+					reloadNote('LITTLE');
+					noteSplashTexture = 'HURTnoteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = -100;
+					colorSwap.brightness = 0;
+				case 'hell note':
+					ignoreNote = mustPress;
+					reloadNote('HELL');
+					noteSplashTexture = 'HELLnoteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					if(isSustainNote) {
+						missHealth = 0.1;
+					} else {
+						missHealth = 0.45;
+					}
+					hitCausesMiss = true;
 			}
 			noteType = value;
 		}
@@ -294,6 +314,9 @@ class Note extends FlxSprite
 			frames = Paths.getSparrowAtlas(blahblah);
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
+			if (noteType == 'hell note'){
+				offset.set(-10,0);
+			}
 		}
 		if(isSustainNote) {
 			scale.y = lastScaleY;
