@@ -1,0 +1,16 @@
+{
+	"song": {
+		"player1": "bf-phil",
+		"player2": "phil-evil",
+		"gfVersion": "gf",
+		"events": [],
+		"player3": null,
+		"song": "worker",
+		"arrowSkin": "",
+		"validScore": true,
+		"needsVoices": true,
+		"stage": "workerBg",
+		"speed": 3,
+		"bpm": 200
+	}
+}
