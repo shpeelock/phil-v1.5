@@ -944,11 +944,6 @@ class PlayState extends MusicBeatState
 			SONG.gfVersion = gfVersion; //Fix for the Chart Editor
 		}
 
-		switch(curStage){
-			case 'philBg' | 'slackBg' | 'workerBg' | 'lilmanBg' | 'slackbgfnafWHATREALBLOXIAM':
-				gf.visible = false;
-		}
-
 		if (!stageData.hide_girlfriend)
 		{
 			gf = new Character(0, 0, gfVersion);
@@ -990,6 +985,9 @@ class PlayState extends MusicBeatState
 			case 'schoolEvil':
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				insert(members.indexOf(dadGroup) - 1, evilTrail);
+
+			case 'philBg' | 'slackBg' | 'workerBg' | 'lilmanBg' | 'slackbgfnafWHATREALBLOXIAM':
+				gf.visible = false;
 		}
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
