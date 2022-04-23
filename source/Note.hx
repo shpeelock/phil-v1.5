@@ -314,9 +314,8 @@ class Note extends FlxSprite
 			frames = Paths.getSparrowAtlas(blahblah);
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
-			if (noteType == 'hell note'){
-				offset.set(-10,0);
-			}
+		} if (noteType == 'hell note'){
+			offsetX += 30;
 		}
 		if(isSustainNote) {
 			scale.y = lastScaleY;
