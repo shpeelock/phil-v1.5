@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pitBg.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cus my asshole instance 10000" x="0" y="0" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10001" x="0" y="2521" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10002" x="1290" y="0" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10003" x="0" y="5042" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10004" x="1290" y="2521" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10005" x="2580" y="0" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10006" x="1290" y="5042" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10007" x="2580" y="2521" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10008" x="3870" y="0" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10009" x="2580" y="5042" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10010" x="3870" y="2521" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10011" x="5160" y="0" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10012" x="3870" y="5042" width="1285" height="2516"/>
+	<SubTexture name="cus my asshole instance 10013" x="5160" y="2521" width="1285" height="2516"/>
+</TextureAtlas>
