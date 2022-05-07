@@ -1,5 +1,6 @@
 package;
 
+import haxe.io.Path;
 import Controls.Control;
 import flixel.graphics.FlxGraphic;
 #if desktop
@@ -277,7 +278,7 @@ class PlayState extends MusicBeatState
 	var boss:FlxSprite = new FlxSprite();
 	var ohHellnah:FlxSprite = new FlxSprite();
 	var philbg:FlxSprite;
-	var	philScared:BGSprite;
+	var	philScared:FlxSprite;
 	var deathByKnife:Bool;
 	var bfDodging:Bool = false;
 	var bfCanDodge:Bool = false;
@@ -461,8 +462,8 @@ class PlayState extends MusicBeatState
 				}
 
 				case 'philBg':
-					var white:FlxSprite = new FlxSprite().makeGraphic(FlxG.width * 5000, 1000, FlxColor.WHITE);
-					add(white);
+					var outer:FlxSprite = new FlxSprite(-136, -179.1).loadGraphic(Paths.image('stagePhil/philouter', 'phil'));
+					add(outer);
 					philbg = new FlxSprite(-136, -179.1).loadGraphic(Paths.image('stagePhil/philbg', 'phil'));
 					philbg.antialiasing = true;
 					add(philbg);
@@ -501,17 +502,20 @@ class PlayState extends MusicBeatState
 					stars.antialiasing = true;
 					add(stars);
 	
-					philScared = new BGSprite('phil-scared', 149.75, 317, 1, 1, ['phil idle in fear']);
+					philScared = new FlxSprite(149.75, 317);
+					philScared.frames = Paths.getSparrowAtlas('stagePhil/worker/phil-scared', 'phil');
+					philScared.animation.addByPrefix('idle', 'phil idle in fear', 24, true);
 					add(philScared);
-	
-					philScared.dance(true);
+					philScared.animation.play('idle');
 
 				case 'pitBg':
 					pit.antialiasing = true;
-					pit.y -= 600;
+					pit.y -= 900;
+					pit.scale.set(3,3);
 					pit.frames = Paths.getSparrowAtlas('stagePhil/hellDescent/pitBg', 'phil');
 					pit.animation.addByPrefix('idle', 'cus my asshole instance 1', 24, true);
 					add(pit);
+					pit.animation.play('idle');
 	
 				case 'lilmanBg':
 	
@@ -596,6 +600,25 @@ class PlayState extends MusicBeatState
 					//ilBg.scale.set()
 					ilBg.loadGraphic(Paths.image('stagePhil/ilBg', 'phil'));
 					add(ilBg);
+
+				case 'ronBg':
+
+					var bg:FlxSprite = new FlxSprite(-98.95, -10.15).loadGraphic(Paths.image('stagePhil/ron/sky', 'phil'));
+					bg.antialiasing = true;
+					add(bg);
+	
+					var ground:FlxSprite = new FlxSprite(-98.95, 628.2).loadGraphic(Paths.image('stagePhil/ron/road', 'phil'));
+					ground.antialiasing = true;
+					add(ground);
+	
+					var lamp:FlxSprite = new FlxSprite(92.7, 112.1).loadGraphic(Paths.image('stagePhil/ron/lambp', 'phil'));
+					lamp.antialiasing = true;
+					add(lamp);
+	
+					var sun:FlxSprite = new FlxSprite(1452.15, 68.85).loadGraphic(Paths.image('stagePhil/ron/sun', 'phil'));
+					sun.antialiasing = true;
+					add(sun);
+	
 		}
 
 		if(isPixelStage) {
@@ -756,7 +779,7 @@ class PlayState extends MusicBeatState
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				insert(members.indexOf(dadGroup) - 1, evilTrail);
 
-			case 'philBg' | 'slackBg' | 'workerBg' | 'lilmanBg' | 'slackbgfnafWHATREALBLOXIAM' | 'ilBg' | 'pitBg':
+			case 'philBg' | 'slackBg' | 'workerBg' | 'lilmanBg' | 'slackbgfnafWHATREALBLOXIAM' | 'ilBg' | 'pitBg' | 'ronBg':
 				gf.visible = false;
 		}
 
@@ -3123,13 +3146,16 @@ class PlayState extends MusicBeatState
 				bossKnife.alpha = 1;
 				if(cpuControlled){
 					dad.playAnim('dodge', true);
+					boyfriend.specialAnim = true;
 					boyfriend.playAnim('alt-dodge', true);
 				}
 
 			case 'workerBg':
 				bossfire.play();
 				dad.playAnim('attack', true);
+				dad.specialAnim = true;
 				if(cpuControlled){
+					boyfriend.specialAnim = true;
 					boyfriend.playAnim('alt-dodge', true);
 				}
 
@@ -3138,6 +3164,7 @@ class PlayState extends MusicBeatState
 				lilmanSpike.animation.play('attack', true);
 				lilmanSpike.alpha = 1;
 				if(cpuControlled){
+					boyfriend.specialAnim = true;
 					boyfriend.playAnim('dodge', true);
 				}
 
@@ -3157,8 +3184,10 @@ class PlayState extends MusicBeatState
 						healthdrain();
 						ded.play();
 						health -= 0.2; //no insta kill everyone's sanity
+						boyfriend.specialAnim = true;
 						boyfriend.playAnim('hurt', true);
 						if(curSong == 'slack'){
+							dad.specialAnim = true;
 							dad.playAnim('dead', true);
 						}
 						trace('ouch');
@@ -3166,6 +3195,7 @@ class PlayState extends MusicBeatState
 					else if(bfDodging = true){
 						trace('awesome');
 						if(curSong == 'slack'){
+							dad.specialAnim = true;
 							dad.playAnim('dodge', true);
 						}
 						health += 0.2;
@@ -3801,15 +3831,17 @@ class PlayState extends MusicBeatState
 				bfCanDodge = false;
 
 				if(curStage == 'slackBg' || curStage == 'workerBg'){
+					boyfriend.specialAnim = true;
 					boyfriend.playAnim('alt-dodge', true);
 				}
 				else
 				{
+					boyfriend.specialAnim = true;
 					boyfriend.playAnim('dodge', true);
 				}
 
 				new FlxTimer().start(0.330, function(tmr:FlxTimer)
-				{
+				{					
 					bfDodging = false;
 					trace('DODGE END!');
 					new FlxTimer().start(0.05, function(tmr:FlxTimer)
@@ -4478,6 +4510,10 @@ class PlayState extends MusicBeatState
 		if (curBeat % 2 == 0 && curStage == 'pitBg')
 		{
 			pit.animation.play('idle');
+		}
+		if (curBeat % 2 == 0 && curStage == 'workerBg')
+		{
+			philScared.animation.play('idle');
 		}
 
 		switch (curStage)

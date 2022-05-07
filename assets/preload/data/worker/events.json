@@ -1,0 +1,469 @@
+{
+	"song": {
+		"speed": 3,
+		"stage": "workerBg",
+		"player1": "bf-phil",
+		"player2": "phil-evil",
+		"player3": null,
+		"events": [
+			[
+				1800,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				2400,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3600,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				6000,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				6600,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				7200,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				7800,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				18600,
+				[
+					[
+						"Boss Attack Alert",
+						" ",
+						""
+					]
+				]
+			],
+			[
+				19200,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				19800,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				20400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				22200,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				22800,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				23400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				24000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				27000,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				27600,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				28200,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				28800,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				40200,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				40800,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				41400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				42000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				43200,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				43800,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				44400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				45000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				76800,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				77400,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				78000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				78600,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				81600,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				82200,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				82800,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				83400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				134400,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				135000,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				135600,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				136200,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				139200,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				139800,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				140400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				141000,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				157800,
+				[
+					[
+						"Play Animation",
+						"dies",
+						"dad"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 200,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "worker"
+	}
+}

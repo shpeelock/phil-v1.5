@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"itero",
+			"ron",
+			[
+				255,
+				213,
+				35
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "",
+	"weekCharacters": [
+		"",
+		"bf",
+		""
+	],
+	"storyName": "The Onslaught's End",
+	"weekName": "ONSLAUGHT'S END",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

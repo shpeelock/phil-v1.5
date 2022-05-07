@@ -62,16 +62,16 @@
 		50,
 		230
 	],
-	"healthicon": "face",
+	"healthicon": "il",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		255,
+		255,
+		255
 	],
 	"camera_position": [
-		0,
-		0
+		-130,
+		130
 	],
 	"sing_duration": 6.1,
 	"scale": 1

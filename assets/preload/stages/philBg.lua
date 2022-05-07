@@ -1,7 +1,7 @@
-local xx = 930;
-local yy = 590;
-local xx2 = 960;
-local yy2 = 590;
+local xx = 840;
+local yy = 630;
+local xx2 = 1100;
+local yy2 = 630;
 local ofs = 15;
 local followchars = true;
 
@@ -21,24 +21,10 @@ function onUpdate()
             if getProperty('dad.animation.curAnim.name') == 'singDOWN' then
                 triggerEvent('Camera Follow Pos',xx,yy+ofs)
             end
-            if getProperty('dad.animation.curAnim.name') == 'singLEFT-alt' then
-                triggerEvent('Camera Follow Pos',xx-ofs,yy)
-            end
-            if getProperty('dad.animation.curAnim.name') == 'singRIGHT-alt' then
-                triggerEvent('Camera Follow Pos',xx+ofs,yy)
-            end
-            if getProperty('dad.animation.curAnim.name') == 'singUP-alt' then
-                triggerEvent('Camera Follow Pos',xx,yy-ofs)
-            end
-            if getProperty('dad.animation.curAnim.name') == 'singDOWN-alt' then
-                triggerEvent('Camera Follow Pos',xx,yy+ofs)
-            end
-            if getProperty('dad.animation.curAnim.name') == 'idle-alt' then
-                triggerEvent('Camera Follow Pos',xx,yy)
-            end
             if getProperty('dad.animation.curAnim.name') == 'idle' then
                 triggerEvent('Camera Follow Pos',xx,yy)
             end
+            
         else
 
             setProperty('defaultCamZoom', 1.1)
@@ -54,10 +40,7 @@ function onUpdate()
             if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
                 triggerEvent('Camera Follow Pos',xx2,yy2+ofs)
             end
-            if getProperty('dad.animation.curAnim.name') == 'idle-alt' then
-                triggerEvent('Camera Follow Pos',xx2,yy2)
-            end
-            if getProperty('dad.animation.curAnim.name') == 'idle' then
+            if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
                 triggerEvent('Camera Follow Pos',xx2,yy2)
             end
         end

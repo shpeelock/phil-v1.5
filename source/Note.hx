@@ -118,23 +118,40 @@ class Note extends FlxSprite
 				case 'little note':
 					ignoreNote = mustPress;
 					reloadNote('LITTLE');
-					noteSplashTexture = 'HURTnoteSplashes';
+					noteSplashDisabled = true;
 					colorSwap.hue = 0;
 					colorSwap.saturation = -100;
 					colorSwap.brightness = 0;
-				case 'hell note':
+					if(!PlayState.isPixelStage) {
+						if (noteData != 3) offsetX -= 16 else offsetX -= 12;
+					} else 
+					{
+						offsetX -= 15;
+					}
+				case 'hell note': // now you can have both
 					ignoreNote = mustPress;
 					reloadNote('HELL');
-					noteSplashTexture = 'HELLnoteSplashes';
-					colorSwap.hue = 0;
+					noteSplashDisabled = true;
+					hitCausesMiss = true;
+					colorSwap.hue = 1;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
-					if(isSustainNote) {
-						missHealth = 0.1;
-					} else {
-						missHealth = 0.45;
+					if(!PlayState.isPixelStage) 
+					{
+						if (noteData != 3){
+							offsetX -= 9;
+							offsetY -= 29;
+						} else {
+							offsetX -= 9;
+							offsetY -= 29;
+						} 
+					} 
+					else 
+					{
+						offsetX -= 18;
+						offsetY -= 10;
 					}
-					hitCausesMiss = true;
+						
 			}
 			noteType = value;
 		}
@@ -282,40 +299,36 @@ class Note extends FlxSprite
 		var lastScaleY:Float = scale.y;
 		var blahblah:String = arraySkin.join('/');
 		if(PlayState.isPixelStage) {
-			if(isSustainNote) {
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
-				width = width / 4;
-				height = height / 2;
-				originalHeightForCalcs = height;
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
-			} else {
-				loadGraphic(Paths.image('pixelUI/' + blahblah));
-				width = width / 4;
-				height = height / 5;
-				loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
-			}
-			setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-			loadPixelNoteAnims();
-			antialiasing = false;
-
-			if(isSustainNote) {
-				offsetX += lastNoteOffsetXForPixelAutoAdjusting;
-				lastNoteOffsetXForPixelAutoAdjusting = (width - 7) * (PlayState.daPixelZoom / 2);
-				offsetX -= lastNoteOffsetXForPixelAutoAdjusting;
-				
-				/*if(animName != null && !animName.endsWith('end'))
-				{
-					lastScaleY /= lastNoteScaleToo;
-					lastNoteScaleToo = (6 / height);
-					lastScaleY *= lastNoteScaleToo; 
-				}*/
+			if (prefix != 'HELL') 
+			{
+				if(isSustainNote) {
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
+					width = width / 4;
+					height = height / 2;
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
+				} else {
+					loadGraphic(Paths.image('pixelUI/' + blahblah));
+					width = width / 4;
+					height = height / 5;
+					loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
+				}
+				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
+				loadPixelNoteAnims();
+				antialiasing = false;
+			} else 
+			{
+				frames = Paths.getSparrowAtlas('pixelUI/' + blahblah);
+				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
+				animation.addByPrefix('greenScroll', 'green0');
+				animation.addByPrefix('redScroll', 'red0');
+				animation.addByPrefix('blueScroll', 'blue0');
+				animation.addByPrefix('purpleScroll', 'purple0');
+				antialiasing = false;
 			}
 		} else {
 			frames = Paths.getSparrowAtlas(blahblah);
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
-		} if (noteType == 'hell note'){
-			offsetX += 30;
 		}
 		if(isSustainNote) {
 			scale.y = lastScaleY;
