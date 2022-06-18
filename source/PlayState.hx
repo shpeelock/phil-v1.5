@@ -2572,15 +2572,8 @@ class PlayState extends MusicBeatState
 
 				if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent && !daNote.ignoreNote)
 				{
-					if (daNote.noteType == 'little note' || daNote.noteType == 'hell note')
-					{
-						//No
-					}
-					else
-					{
-						opponentNoteHit(daNote);
-					}
-				} 
+					opponentNoteHit(daNote);
+				}
 
 				if(daNote.mustPress && cpuControlled) {
 					if(daNote.isSustainNote) {
@@ -4046,14 +4039,7 @@ class PlayState extends MusicBeatState
 		if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 			time += 0.15;
 		}
-		if(note.noteType == 'little note')
-		{
-			//Do nothing
-		} 
-		else
-		{
-			StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % 4, time);
-		}
+		StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % 4, time);
 		note.hitByOpponent = true;
 
 		callOnLuas('opponentNoteHit', [notes.members.indexOf(note), Math.abs(note.noteData), note.noteType, note.isSustainNote]);
