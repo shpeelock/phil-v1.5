@@ -1,4 +1,16 @@
 {
+	"storyName": "The Onslaught's End",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"itero",
@@ -8,25 +20,22 @@
 				213,
 				35
 			]
+		],
+		[
+			"old friend",
+			"little-man",
+			[
+				255,
+				255,
+				255
+			]
 		]
 	],
-	"hiddenUntilUnlocked": false,
-	"hideFreeplay": false,
-	"weekBackground": "stage",
-	"difficulties": "",
 	"weekCharacters": [
 		"",
 		"bf",
 		""
 	],
-	"storyName": "The Onslaught's End",
-	"weekName": "ONSLAUGHT'S END",
-	"freeplayColor": [
-		146,
-		113,
-		253
-	],
-	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"hiddenUntilUnlocked": false,
+	"weekName": "ONSLAUGHT'S END"
 }
