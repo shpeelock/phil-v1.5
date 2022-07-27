@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "bif idle",
-			"indices": []
+			"indices": [],
+			"name": "bif idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "bif left",
-			"indices": []
+			"indices": [],
+			"name": "bif left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "bif down",
-			"indices": []
+			"indices": [],
+			"name": "bif down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "bif right",
-			"indices": []
+			"indices": [],
+			"name": "bif right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "bif up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "bif up"
 		}
 	],
 	"no_antialiasing": false,
@@ -70,7 +70,7 @@
 		201
 	],
 	"camera_position": [
-		0,
+		10,
 		60
 	],
 	"sing_duration": 6.1,

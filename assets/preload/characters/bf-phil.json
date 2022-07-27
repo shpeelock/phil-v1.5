@@ -49,10 +49,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
+			"indices": [],
 			"name": "BF NOTE RIGHT"
 		},
 		{
@@ -60,10 +60,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFTmiss",
-			"loop": false,
+			"indices": [],
 			"name": "BF LEFT MISS"
 		},
 		{
@@ -71,10 +71,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singUPmiss",
-			"loop": false,
+			"indices": [],
 			"name": "BF UP MISS"
 		},
 		{
@@ -82,10 +82,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
+			"indices": [],
 			"name": "BF DOWN MISS"
 		},
 		{
@@ -93,10 +93,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHTmiss",
-			"loop": false,
+			"indices": [],
 			"name": "BF RIGHT MISS"
 		},
 		{
@@ -104,10 +104,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "dodge",
-			"loop": false,
+			"indices": [],
 			"name": "boyfriend dodge"
 		},
 		{
@@ -115,10 +115,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "alt-dodge",
-			"loop": false,
+			"indices": [],
 			"name": "boyfriend knife dodge"
 		}
 	],
@@ -136,8 +136,8 @@
 		209
 	],
 	"camera_position": [
-		0,
-		0
+		60,
+		40
 	],
 	"sing_duration": 6.1,
 	"scale": 1

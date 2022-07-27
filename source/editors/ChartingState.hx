@@ -77,6 +77,8 @@ class ChartingState extends MusicBeatState
 	var eventStuff:Array<Dynamic> =
 	[
 		['', "Nothing. Yep, that's right."],
+		['philsa', "Yeaa!!!! Wooo!!! i want to kill myse"],
+		['Flash', "phil mod, more like .... mid .... mod ... Vine boom"],
 		['Boss Attack', "Yeah"],
 		['Boss Attack Alert', "Yeppppp"],
 		['Boss Attack Alert x2', "i have no idea if im ever going to use this"],

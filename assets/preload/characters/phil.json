@@ -1,70 +1,81 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				-200
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "phil idle"
+			"fps": 24,
+			"name": "phil idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				13,
-				-201
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				19,
+				-200
+			],
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "phil Left"
+			"fps": 24,
+			"name": "phil Left",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-80,
-				-207
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-76,
+				-205
+			],
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "phil Right"
+			"fps": 24,
+			"name": "phil Right",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-10,
-				-324
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				1,
+				-315
+			],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "phil Down"
-		},
-		{
-			"offsets": [
-				-17,
-				-135
-			],
-			"loop": false,
 			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "phil Up"
+			"name": "phil Down",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				1,
+				-116
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "phil Up",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				40,
 				-410
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "dead",
+			"fps": 24,
+			"name": "rip bozo",
+			"indices": []
+		},
+		{
+			"offsets": [
+				14,
+				-194
+			],
 			"loop": false,
-			"name": "rip bozo"
+			"fps": 24,
+			"anim": "rly",
+			"indices": [],
+			"name": "phil rly"
 		}
 	],
 	"no_antialiasing": false,
@@ -81,8 +92,8 @@
 		25
 	],
 	"camera_position": [
-		-20,
-		380
+		20,
+		330
 	],
 	"sing_duration": 4,
 	"scale": 1
