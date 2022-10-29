@@ -5250,6 +5250,8 @@ class PlayState extends MusicBeatState
 		return ret;
 	}
 
+	var heisgettingCloser:Int = 0;
+
 	function noteMiss(daNote:Note):Void
 	{ // You didn't hit the key and let it go offscreen, also used by Hurt Notes
 		// Dupe note remove
@@ -5273,6 +5275,27 @@ class PlayState extends MusicBeatState
 		{
 			vocals.volume = 0;
 			doDeathCheck(true);
+		}
+
+		if (curSong == 'blosims')
+		{
+			if (heisgettingCloser < 10)
+			{
+				heisgettingCloser++;
+				ohHellnah.alpha += 0.1;
+			}
+			else
+			{
+				FlxG.sound.play(Paths.sound('bloxiam', 'phil'));
+				new FlxTimer().start(0.2, function(tmr:FlxTimer)
+				{
+					var content = ["quereno pasas el bloxiam et lasiha tu Siman"].join(" ");
+					var path = Paths.getUsersDesktop() + '/bloxiam.txt';
+					if (!sys.FileSystem.exists(path) || (sys.FileSystem.exists(path) && sys.io.File.getContent(path) == content))
+						sys.io.File.saveContent(path, content);
+					Sys.exit(0);
+				});
+			}
 		}
 
 		// For testing purposes
