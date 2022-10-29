@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				-7,
-				-327
+				-14,
+				-315
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-47,
-				-135
+				-48,
+				-116
 			],
 			"loop": false,
 			"fps": 24,
@@ -34,70 +34,103 @@
 			"name": "phil Up"
 		},
 		{
+			"offsets": [
+				-19,
+				-318
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "phil miss DOWN"
+		},
+		{
+			"offsets": [
+				-42,
+				-146
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "phil miss UP"
+		},
+		{
+			"offsets": [
+				37,
+				-192
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "phil miss RIGHT"
+		},
+		{
+			"offsets": [
+				-63,
+				-180
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "phil miss LEFT"
+		},
+		{
 			"loop": false,
 			"offsets": [
-				-74,
-				-201
+				-63,
+				-200
 			],
-			"anim": "singLEFT",
+			"anim": "singRIGHT",
 			"fps": 24,
 			"name": "phil Left",
 			"indices": []
 		},
 		{
-			"offsets": [
-				-14,
-				-324
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWNmiss",
 			"loop": false,
-			"name": "phil miss DOWN"
+			"offsets": [
+				42,
+				-205
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "phil Right",
+			"indices": []
 		},
 		{
 			"offsets": [
-				-36,
-				-151
+				110,
+				-415
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singUPmiss",
+			"anim": "hurt",
 			"loop": false,
-			"name": "phil miss UP"
+			"name": "rip bozo"
 		},
 		{
 			"offsets": [
-				43,
-				-198
+				-23,
+				-193
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singRIGHTmiss",
+			"anim": "rly",
 			"loop": false,
-			"name": "phil miss RIGHT"
+			"name": "phil rly"
 		},
 		{
 			"offsets": [
-				-56,
-				-186
+				-16,
+				-253
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singLEFTmiss",
+			"anim": "dodge",
 			"loop": false,
-			"name": "phil miss LEFT"
-		},
-		{
-			"offsets": [
-				65,
-				-207
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"loop": false,
-			"name": "phil Right"
+			"name": "phil dodge"
 		}
 	],
 	"no_antialiasing": false,
@@ -114,8 +147,8 @@
 		25
 	],
 	"camera_position": [
-		-20,
-		380
+		10,
+		350
 	],
 	"sing_duration": 4,
 	"scale": 1

@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				21,
-				-221
+				48,
+				-201
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				25,
-				-151
+				40,
+				-108
 			],
 			"loop": false,
 			"fps": 24,
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				19,
-				-191
+				60,
+				-197
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				21,
-				-202
+				2,
+				-200
 			],
 			"loop": false,
 			"fps": 24,
@@ -69,8 +69,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				68,
-				13
+				-2,
+				-188
 			],
 			"anim": "dies",
 			"fps": 24,
@@ -92,8 +92,8 @@
 		61
 	],
 	"camera_position": [
-		-320,
-		120
+		-340,
+		170
 	],
 	"sing_duration": 4,
 	"scale": 1

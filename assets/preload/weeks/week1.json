@@ -1,14 +1,10 @@
 {
-	"storyName": "phil",
+	"storyName": "the slacking beginnings",
+	"difficulties": "slacker",
 	"hideFreeplay": false,
 	"weekBackground": "phil",
 	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"weekCharacters": [
-		"",
-		"bf-phil",
-		""
-	],
 	"songs": [
 		[
 			"phils",
@@ -39,5 +35,10 @@
 		]
 	],
 	"hideStoryMode": false,
+	"weekCharacters": [
+		"",
+		"bf-phil",
+		""
+	],
 	"weekName": "Phil"
 }

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="popup9.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="popup close0000" x="1830" y="0" width="284" height="225" frameX="-88" frameY="-122" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0001" x="2143" y="0" width="284" height="225" frameX="-88" frameY="-122" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0002" x="618" y="0" width="268" height="246" frameX="-96" frameY="-112" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0003" x="915" y="0" width="268" height="246" frameX="-96" frameY="-112" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0004" x="4021" y="0" width="24" height="471" frameX="-218" frameY="0" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0005" x="2738" y="1016" width="24" height="471" frameX="-218" frameY="0" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0006" x="2326" y="1016" width="383" height="30" frameX="-39" frameY="-219" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0007" x="2791" y="1016" width="461" height="4" frameX="0" frameY="-232" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup close0008" x="0" y="0" width="0" height="0" frameX="-88" frameY="-122" frameWidth="461" frameHeight="471"/>
+	<SubTexture name="popup open0000" x="3281" y="1016" width="461" height="4" frameX="0" frameY="-116" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0001" x="1920" y="1016" width="377" height="46" frameX="-42" frameY="-95" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0002" x="1252" y="1016" width="305" height="172" frameX="-78" frameY="-32" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0003" x="1586" y="1016" width="305" height="172" frameX="-78" frameY="-32" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0004" x="0" y="0" width="280" height="238" frameX="-90" frameY="0" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0005" x="309" y="0" width="280" height="238" frameX="-90" frameY="0" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0006" x="1212" y="0" width="280" height="235" frameX="-90" frameY="-2" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0007" x="1521" y="0" width="280" height="235" frameX="-90" frameY="-2" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0008" x="2456" y="0" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0009" x="2769" y="0" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0010" x="3082" y="0" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0011" x="3395" y="0" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0012" x="3708" y="0" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0013" x="1830" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0014" x="2143" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0015" x="2456" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0016" x="2769" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0017" x="3082" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0018" x="3395" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0019" x="3708" y="254" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0020" x="1212" y="264" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0021" x="0" y="267" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0022" x="313" y="275" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0023" x="626" y="275" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0024" x="1525" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0025" x="1838" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0026" x="2151" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0027" x="2464" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0028" x="2777" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0029" x="3090" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0030" x="3403" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0031" x="3716" y="508" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0032" x="939" y="518" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0033" x="0" y="521" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0034" x="313" y="529" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0035" x="626" y="529" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0036" x="1252" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0037" x="1565" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0038" x="1878" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0039" x="2191" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0040" x="2504" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0041" x="2817" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0042" x="3130" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0043" x="3443" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0044" x="3756" y="762" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0045" x="939" y="772" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0046" x="0" y="775" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0047" x="313" y="783" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+	<SubTexture name="popup open0048" x="626" y="783" width="284" height="225" frameX="-88" frameY="-6" frameWidth="461" frameHeight="238"/>
+</TextureAtlas>

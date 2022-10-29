@@ -1,10 +1,5 @@
 {
 	"song": {
-		"speed": 3,
-		"stage": "workerBg",
-		"player1": "bf-phil",
-		"player2": "phil-evil",
-		"player3": null,
 		"events": [
 			[
 				1800,
@@ -447,7 +442,47 @@
 				]
 			],
 			[
-				157800,
+				153600,
+				[
+					[
+						"Boss Attack Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				154200,
+				[
+					[
+						"Boss Attack Alert x2",
+						"",
+						""
+					]
+				]
+			],
+			[
+				154800,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				155400,
+				[
+					[
+						"Boss Attack",
+						"",
+						""
+					]
+				]
+			],
+			[
+				157200,
 				[
 					[
 						"Play Animation",
@@ -456,14 +491,6 @@
 					]
 				]
 			]
-		],
-		"notes": [],
-		"splashSkin": null,
-		"validScore": false,
-		"gfVersion": "gf",
-		"bpm": 200,
-		"arrowSkin": "",
-		"needsVoices": true,
-		"song": "worker"
+		]
 	}
 }
