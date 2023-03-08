@@ -51,6 +51,7 @@ import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
 import haxe.Json;
+import hxcodec.VideoHandler;
 import lime.utils.Assets;
 import openfl.Lib;
 import openfl.display.BlendMode;
@@ -73,7 +74,7 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 #if VIDEOS_ALLOWED
-import vlc.MP4Handler;
+import hxcodec.VideoHandler;
 #end
 
 class PlayState extends MusicBeatState
@@ -744,6 +745,9 @@ class PlayState extends MusicBeatState
 		{
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
+			case 'worker':
+				GameOverSubstate.characterName = 'bf-shot-dead';
+				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-philmer';
 		}
 
 		if (isPixelStage)
@@ -945,7 +949,7 @@ class PlayState extends MusicBeatState
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt.setFormat(Paths.font("w95fa.otf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
@@ -973,7 +977,7 @@ class PlayState extends MusicBeatState
 		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 8), Std.int(timeBarBG.height - 8), this,
 			'songPercent', 0, 1);
 		timeBar.scrollFactor.set();
-		timeBar.createFilledBar(0xFF000000, 0xFFFFFFFF);
+		timeBar.createFilledBar(0x000000, FlxColor.fromRGB(dad.healthColorArray[0], dad.healthColorArray[1], dad.healthColorArray[2]));
 		timeBar.numDivisions = 800; // How much lag this causes?? Should i tone it down to idk, 400 or 200?
 		timeBar.alpha = 0;
 		timeBar.visible = showTime;
@@ -1065,14 +1069,14 @@ class PlayState extends MusicBeatState
 		reloadHealthBarColors();
 
 		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("w95fa.otf"), 25, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.setFormat(Paths.font("w95fa.otf"), 22, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.setFormat(Paths.font("w95fa.otf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -1274,7 +1278,10 @@ class PlayState extends MusicBeatState
 					tankIntro();
 
 				case 'phils':
-					philsIntro();
+					startVideo("phil_cutscene_remake");
+
+				case 'hell-descent':
+					startVideo("hell descent cutscene");
 
 				default:
 					startCountdown();
@@ -1345,7 +1352,7 @@ class PlayState extends MusicBeatState
 
 		var spacebarInstructions = new FlxText(0, 0, 500); // x, y, width
 		spacebarInstructions.text = "PRESS SPACEBAR TO DODGE!!";
-		spacebarInstructions.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacebarInstructions.setFormat(Paths.font("w95fa.otf"), 42, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacebarInstructions.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		spacebarInstructions.alpha = 0;
 		spacebarInstructions.cameras = [camHUD];
@@ -1362,7 +1369,7 @@ class PlayState extends MusicBeatState
 	{
 		var spacebarPrepare = new FlxText(0, 0, 500); // x, y, width
 		spacebarPrepare.text = "DODGE!!";
-		spacebarPrepare.setFormat(Paths.font("vcr.ttf"), 80, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		spacebarPrepare.setFormat(Paths.font("w95fa.otf"), 80, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		spacebarPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		spacebarPrepare.alpha = 1;
 		spacebarPrepare.cameras = [camHUD];
@@ -1383,7 +1390,7 @@ class PlayState extends MusicBeatState
 
 		var attackPrepare = new FlxText(0, 0, 500); // x, y, width
 		attackPrepare.text = "!";
-		attackPrepare.setFormat(Paths.font("vcr.ttf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		attackPrepare.setFormat(Paths.font("w95fa.otf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
 		attackPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		attackPrepare.alpha = 1;
 		attackPrepare.cameras = [camHUD];
@@ -1406,7 +1413,7 @@ class PlayState extends MusicBeatState
 
 		var attackPrepare = new FlxText(0, 0, 500); // x, y, width
 		attackPrepare.text = "! x2";
-		attackPrepare.setFormat(Paths.font("vcr.ttf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		attackPrepare.setFormat(Paths.font("w95fa.otf"), 160, FlxColor.BLACK, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
 		attackPrepare.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		attackPrepare.alpha = 1;
 		attackPrepare.cameras = [camHUD];
@@ -1674,7 +1681,7 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
-		var video:MP4Handler = new MP4Handler();
+		var video:VideoHandler = new VideoHandler();
 		video.playVideo(filepath);
 		video.finishCallback = function()
 		{
@@ -2228,6 +2235,19 @@ class PlayState extends MusicBeatState
 					}
 				};
 			}
+			if (curSong == 'worker')
+			{
+				dad.playAnim('ready', true);
+
+				dad.animation.finishCallback = function(name:String)
+				{
+					if (name == 'ready')
+					{
+						dad.playAnim('idle', true);
+						dad.animation.curAnim.finish(); // Instantly goes to last frame
+					}
+				};
+			}
 
 			startTimer = new FlxTimer().start(Conductor.crochet / 1000 / playbackRate, function(tmr:FlxTimer)
 			{
@@ -2246,7 +2266,7 @@ class PlayState extends MusicBeatState
 				{
 					boyfriend.dance();
 				}
-				if (curSong == 'phils')
+				if (curSong == 'phils' || curSong == 'worker')
 				{
 					// no
 				}
@@ -2275,19 +2295,20 @@ class PlayState extends MusicBeatState
 
 				switch (curStage)
 				{
-					case 'slackBg' | 'workerBg' | 'slackbgfnafWHATREALBLOXIAM':
-						spacebarInstructions();
-
 					case 'blosims':
 						add(ohHellnah);
 
 					case 'lilmanBg':
-						spacebarInstructions();
 						var grass2:FlxSprite = new FlxSprite(-28.4, 858.55).loadGraphic(Paths.image('stagePhil/lilman/lilmanGrass', 'phil'));
 						grass2.antialiasing = true;
 						add(grass2);
 
 						add(lilmanSpike);
+				}
+
+				if (dodgeAllowed)
+				{
+					spacebarInstructions();
 				}
 
 				switch (swagCounter)
@@ -3102,23 +3123,11 @@ class PlayState extends MusicBeatState
 		{
 			if (FlxG.mouse.overlaps(bloxiam) && FlxG.mouse.justPressed)
 			{
-				var boo:FlxSound = new FlxSound().loadEmbedded(Paths.sound('bloxiamReveal', 'phil'));
-				ohHellnah.loadGraphic(Paths.image('blosim', 'phil'));
-				ohHellnah.cameras = [camHUD];
-				ohHellnah.antialiasing = true;
-				ohHellnah.screenCenter();
-				add(ohHellnah);
-				boo.play();
-				trace('BOO');
-
-				new FlxTimer().start(6, function(tmr:FlxTimer)
-				{
-					isStoryMode = false;
-					storyPlaylist = [];
-					FlxG.save.data.blosimsUnlocked = true;
-					FlxG.save.flush();
-					SONG = Song.loadFromJson('blosims-slacker', 'blosims');
-				});
+				FlxG.save.data.blosimsUnlocked = true;
+				FlxG.save.flush();
+				SONG = Song.loadFromJson('blosims-slacker', 'blosims');
+				LoadingState.loadAndSwitchState(new PlayState());
+				trace('yoo!!');
 			}
 		}
 
@@ -4834,28 +4843,35 @@ class PlayState extends MusicBeatState
 		}
 
 		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating.image + pixelShitPart2));
-		rating.cameras = [camHUD];
+		// rating.cameras = [camHUD];
 		rating.screenCenter();
-		rating.x = coolText.x - 40;
-		rating.y -= 60;
+		// rating.x = coolText.x - 40;
+		// rating.y -= 60;
 		rating.acceleration.y = 550 * playbackRate * playbackRate;
 		rating.velocity.y -= FlxG.random.int(140, 175) * playbackRate;
 		rating.velocity.x -= FlxG.random.int(0, 10) * playbackRate;
 		rating.visible = (!ClientPrefs.hideHud && showRating);
-		rating.x += ClientPrefs.comboOffset[0];
-		rating.y -= ClientPrefs.comboOffset[1];
+		// rating.x += ClientPrefs.comboOffset[0];
+		// rating.y -= ClientPrefs.comboOffset[1];
 
 		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
-		comboSpr.cameras = [camHUD];
+		// comboSpr.cameras = [camHUD];
 		comboSpr.screenCenter();
-		comboSpr.x = coolText.x;
+		// comboSpr.x = coolText.x;
 		comboSpr.acceleration.y = FlxG.random.int(200, 300) * playbackRate * playbackRate;
 		comboSpr.velocity.y -= FlxG.random.int(140, 160) * playbackRate;
 		comboSpr.visible = (!ClientPrefs.hideHud && showCombo);
-		comboSpr.x += ClientPrefs.comboOffset[0];
-		comboSpr.y -= ClientPrefs.comboOffset[1];
-		comboSpr.y += 60;
+		// comboSpr.x += ClientPrefs.comboOffset[0];
+		// comboSpr.y -= ClientPrefs.comboOffset[1];
+		// comboSpr.y += 60;
 		comboSpr.velocity.x += FlxG.random.int(1, 10) * playbackRate;
+
+		switch (curStage)
+		{
+			case 'philBg':
+				rating.x = 940;
+				rating.y = 466;
+		}
 
 		insert(members.indexOf(strumLineNotes), rating);
 
@@ -4915,13 +4931,16 @@ class PlayState extends MusicBeatState
 		for (i in seperatedScore)
 		{
 			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
-			numScore.cameras = [camHUD];
+			// numScore.cameras = [camHUD];
 			numScore.screenCenter();
 			numScore.x = coolText.x + (43 * daLoop) - 90;
 			numScore.y += 80;
 
-			numScore.x += ClientPrefs.comboOffset[2];
-			numScore.y -= ClientPrefs.comboOffset[3];
+			// numScore.x += ClientPrefs.comboOffset[2];
+			// numScore.y -= ClientPrefs.comboOffset[3];
+
+			numScore.x = rating.x + (43 * daLoop) - 90;
+			numScore.y = rating.y - 90;
 
 			if (!ClientPrefs.comboStacking)
 				lastScore.push(numScore);
@@ -5138,7 +5157,7 @@ class PlayState extends MusicBeatState
 		var parsedHoldArray:Array<Bool> = parseKeys();
 
 		// vs qt my beloved <3
-		if (dodgeAllowed = true)
+		if (dodgeAllowed)
 		{
 			if (FlxG.keys.justPressed.SPACE)
 			{
@@ -5279,7 +5298,7 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'blosims')
 		{
-			if (heisgettingCloser < 10)
+			if (heisgettingCloser < 25)
 			{
 				heisgettingCloser++;
 				ohHellnah.alpha += 0.1;

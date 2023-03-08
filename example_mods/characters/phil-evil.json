@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-43,
+				-199
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "evil philmer right"
+		},
+		{
+			"offsets": [
+				48,
+				-201
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "evil philmer down"
+		},
+		{
+			"offsets": [
+				0,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "evil philmer idle"
+		},
+		{
+			"offsets": [
+				41,
+				-106
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "evil philmer up"
+		},
+		{
+			"offsets": [
+				60,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "evil philmer left"
+		},
+		{
+			"offsets": [
+				2,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "attack",
+			"indices": [],
+			"name": "evil philmer attack"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-188
+			],
+			"anim": "dies",
+			"fps": 24,
+			"name": "arse",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				24,
+				-194
+			],
+			"anim": "ready",
+			"fps": 24,
+			"name": "philmer-ready",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/phil-evil",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "phil-evil",
+	"flip_x": false,
+	"healthbar_colors": [
+		19,
+		5,
+		61
+	],
+	"camera_position": [
+		-340,
+		170
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
